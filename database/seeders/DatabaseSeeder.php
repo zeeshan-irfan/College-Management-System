@@ -33,84 +33,84 @@ class DatabaseSeeder extends Seeder
             AboutSeeder::class,
         ]);
 
-        $this->command->info("Running User Factory.");
-        User::factory(100)->create();
+        // $this->command->info("Running User Factory.");
+        // User::factory(100)->create();
 
-        $this->command->info("Running Bank Factory.");
-        Bank::factory(1)->create();
+        // $this->command->info("Running Bank Factory.");
+        // Bank::factory(1)->create();
 
-        $this->command->info("Running Program Factory.");
-        Program::factory(15)->create();
+        // $this->command->info("Running Program Factory.");
+        // Program::factory(15)->create();
 
-        $this->command->info("Running Degree Factory.");
-        Degree::factory(20)->create();
+        // $this->command->info("Running Degree Factory.");
+        // Degree::factory(20)->create();
 
-        // Loop through all users and create an entries for those without one
-        $this->command->info("Running Address/Personal/Father/Educations Factories.");
-        User::all()->each(function ($user) {
+        // // Loop through all users and create an entries for those without one
+        // $this->command->info("Running Address/Personal/Father/Educations Factories.");
+        // User::all()->each(function ($user) {
 
-            // create address entries for those without one
+        //     // create address entries for those without one
 
-            if (!$user->address) {
-                Address::factory()->create([
-                    'user_id' => $user->id,
-                ]);
-            }
+        //     if (!$user->address) {
+        //         Address::factory()->create([
+        //             'user_id' => $user->id,
+        //         ]);
+        //     }
 
-            // create personal entries for those without one
-            if (!$user->personal) {
-                Personal::factory()->create([
-                    'user_id' => $user->id,
-                ]);
-            }
+        //     // create personal entries for those without one
+        //     if (!$user->personal) {
+        //         Personal::factory()->create([
+        //             'user_id' => $user->id,
+        //         ]);
+        //     }
 
-            // Create fatherinfo entries for those without one
-            if (!$user->fatherinfo) {
-                Fatherinfo::factory()->create([
-                    'user_id' => $user->id,
-                ]);
-            }
+        //     // Create fatherinfo entries for those without one
+        //     if (!$user->fatherinfo) {
+        //         Fatherinfo::factory()->create([
+        //             'user_id' => $user->id,
+        //         ]);
+        //     }
 
-            // Create matric education entries for those without one
-            if (!$user->matricEducation) {
-                Matriceducation::factory()->create([
-                    'user_id' => $user->id,
-                ]);
-            }
+        //     // Create matric education entries for those without one
+        //     if (!$user->matricEducation) {
+        //         Matriceducation::factory()->create([
+        //             'user_id' => $user->id,
+        //         ]);
+        //     }
 
-            // Create matric education entries for those without one
-            if (!$user->intereducation) {
-                Intereducation::factory()->create([
-                    'user_id' => $user->id,
-                ]);
-            }
+        //     // Create matric education entries for those without one
+        //     if (!$user->intereducation) {
+        //         Intereducation::factory()->create([
+        //             'user_id' => $user->id,
+        //         ]);
+        //     }
 
-                                    // Create matric education entries for those without one
-            if (!$user->baeducation) {
-                Baeducation::factory()->create([
-                    'user_id' => $user->id,
-                ]);
-            }
+        //                             // Create matric education entries for those without one
+        //     if (!$user->baeducation) {
+        //         Baeducation::factory()->create([
+        //             'user_id' => $user->id,
+        //         ]);
+        //     }
 
-            // Create matric education entries for those without one
-            if (!$user->bseducation) {
-                Bseducation::factory()->create([
-                    'user_id' => $user->id,
-                ]);
-            }
+        //     // Create matric education entries for those without one
+        //     if (!$user->bseducation) {
+        //         Bseducation::factory()->create([
+        //             'user_id' => $user->id,
+        //         ]);
+        //     }
 
-        });
+        // });
 
-        $this->command->info("Success.");
+        // $this->command->info("Success.");
 
-        $this->command->info("Running Admissions Factory.");
-        Admission::factory(10)->create();
+        // $this->command->info("Running Admissions Factory.");
+        // Admission::factory(10)->create();
 
-        $this->command->info("Running admission Records Factory.");
-        Record::factory(1000)->create();
+        // $this->command->info("Running admission Records Factory.");
+        // Record::factory(1000)->create();
 
-        $this->command->info("Running challans Factory.");
-        ChallanFactory::createForMissingRecords();
+        // $this->command->info("Running challans Factory.");
+        // ChallanFactory::createForMissingRecords();
 
 
     }
