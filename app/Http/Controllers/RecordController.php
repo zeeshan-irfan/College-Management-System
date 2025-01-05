@@ -186,21 +186,21 @@ class RecordController extends Controller
             $record->delete();
 
             // Redirect back with success message
-            return redirect()->route('admin.applications')->with([
+            return redirect()->route('records.applicants')->with([
                 'alertType' => 'success',
                 'alertReason' => 'Record Deleted!',
                 'alertMessage' => 'The record has been successfully deleted.',
             ]);
         } catch (ModelNotFoundException $e) {
             // Handle case where record is not found
-            return redirect()->route('admin.applications')->with([
+            return redirect()->route('records.applicants')->with([
                 'alertType' => 'danger',
                 'alertReason' => 'Not Found!',
                 'alertMessage' => 'The requested record does not exist.',
             ]);
         } catch (\Exception $e) {
             // Handle any other exceptions
-            return redirect()->route('admin.applications')->with([
+            return redirect()->route('records.applicants')->with([
                 'alertType' => 'danger',
                 'alertReason' => 'Error!',
                 'alertMessage' => 'An unexpected error occurred while deleting the record.',

@@ -173,7 +173,7 @@
                         <td>
                             <form id="deleteForm-{{ $record->id }}" action="{{ route('record.destroy', $record->id) }}" method="POST" class="d-inline">
                                 @csrf
-                                @method('DELETE')
+                                @method('POST')
                                 <button type="submit" class="btn btn-sm btn-danger" onclick="confirmDelete(event, 'deleteForm-{{ $record->id }}')">
                                     <i class="bi bi-trash"></i> Delete
                                 </button>
